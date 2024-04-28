@@ -28,7 +28,12 @@
 #endif
 
 #include <atlstr.h>
+
+#pragma warning(push)
+#pragma warning(disable: 4275)
 #include <fmt/format.h>
+#pragma warning(pop)
+
 #include <spdlog/spdlog.h>
 
 #include "CWvsContext.h"

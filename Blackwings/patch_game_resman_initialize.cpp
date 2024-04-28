@@ -97,7 +97,7 @@ VOID _fastcall hook_CWvsApp__InitializeResMan(void* pThis, void* edx)
         if (Config::GameResManLoadCustom)
             asCustomOrder.push_back(Config::GameTitle);
 
-        for (auto i = 0; i < asCustomOrder.size(); i++) {
+        for (auto i = 0; i < (int) asCustomOrder.size(); i++) {
             auto pCustomPackage = _com_ptr_t<_com_IIID<IWzPackage, &IID_IUnknown>>();
 
             orig_PcCreateObject_Package(L"NameSpace#Package", std::addressof(pCustomPackage), NULL);
@@ -133,7 +133,7 @@ VOID _fastcall hook_CWvsApp__InitializeResMan(void* pThis, void* edx)
         asNameOrder.push_back("Sound");
         asNameOrder.push_back("Map");
 
-        for (auto i = 0; i < asNameOrder.size(); i++) {
+        for (auto i = 0; i < (int) asNameOrder.size(); i++) {
             auto pSubPackage = _com_ptr_t<_com_IIID<IWzPackage, &IID_IUnknown>>();
 
             orig_PcCreateObject_Package(L"NameSpace#Package", std::addressof(pSubPackage), NULL);
